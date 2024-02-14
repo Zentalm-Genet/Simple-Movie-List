@@ -12,3 +12,9 @@
     - index.css
     - index.html
     - index.js
+    - 
+
+# Intermediate portion
+ 
+In this section, we are going to customize our notifications a bit. We’ll make it so they disappear after a set amount of time.
+And we’ll change the textContent to include the title of the movie that was affected.
