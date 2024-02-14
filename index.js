@@ -46,9 +46,13 @@ document.querySelector('form').addEventListener("submit", addMovie)
 // step 3: Creating the deleteMovie Function
 
 function deleteMovie (event){
-    event.target.parentNode.remove()
-    message.textContent = 'Movie deleted!';
+    const deletedMovieTitle = event.target.previousElementSibling.textContent;
+    event.target.parentNode.remove();
+    message.textContent = `${deletedMovieTitle} deleted!`;
+
+    revealMessage();
 }
+
 
 // Step 4: Adding the Functionality to Mark Movies as Watched
 
@@ -56,8 +60,31 @@ function crossOffMovie(event){
     event.target.classList.toggle('checked')
 
     if (event.target.classList.contains('checked')) {
-        message.textContent = 'Movie watched!';
+        message.textContent =`${event.target.textContent} watched!`;
     } else {
-        message.textContent = 'Movie added back!';
+        message.textContent = `${event.target.textContent} added back!`;
     }
+
+    revealMessage()
 }
+
+
+
+// Add Intermediate portion for existing interactive web page.
+
+
+function revealMessage() {
+    message.classList.remove('hide');
+
+    setTimeout(() => {
+        message.classList.add('hide');
+    }, 1000);
+}
+
+
+
+
+
+
+
+
