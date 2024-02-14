@@ -12,7 +12,6 @@
     - index.css
     - index.html
     - index.js
-    - 
 
 # Intermediate portion
  
